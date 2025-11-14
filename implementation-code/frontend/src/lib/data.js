@@ -1,0 +1,87 @@
+export const heroContent = [
+  {
+    id: 1,
+    product: "MacBook Air M3",
+    tagline: "Power meets portability",
+    cta: "Buy Now",
+    imageUrl: "https://cdsassets.apple.com/live/7WUAS350/images/tech-specs/mba_13_m3_2024_hero.png",
+  },
+  {
+    id: 2,
+    product: "PlayStation 5",
+    tagline: "Play without limits",
+    cta: "Order Now",
+    imageUrl:
+      "https://ss7.vzw.com/is/image/VerizonWireless/sony-interactive-console-disc-playstation-5-3005718-iset?$acc-lg$",
+  },
+  {
+    id: 3,
+    product: "Samsung Galaxy S24 Ultra",
+    tagline: "Shoot. Create. Dominate.",
+    cta: "Shop Now",
+    imageUrl:
+      "https://www.att.com/scmsassets/global/devices/phones/samsung/samsung-galaxy-s24-ultra/carousel/titanium-gray-1.png",
+  },
+];
+
+export const bestSellers = [
+  {
+    productId: "2e7df1bc-a354-4852-8c9b-139d674affa1",
+    productName: "Phone 17 Pro Max",
+    imageUrl:
+      "https://res.cloudinary.com/dcksuxdd1/image/upload/v1762735433/products/j1rpf5ryy2chminopkci.png",
+    price: 1299.0,
+  },
+  {
+    productId: "d02fdb85-477c-47b1-84e6-17bcb7cbf18d",
+    productName: "ASUS ROG Zephyrus G16",
+    imageUrl:
+      "https://res.cloudinary.com/dcksuxdd1/image/upload/v1762846965/products/i2d6l3jawfxzewqlfudc.png",
+    price: 2199.0,
+  },
+  {
+    productId: "8316a50d-11c7-4078-accd-8ea729b67a8c",
+    productName: "Google Pixel Watch 4",
+    imageUrl:
+      "https://res.cloudinary.com/dcksuxdd1/image/upload/v1762848172/products/qykvy7bkbnj04icxjqsh.png",
+    price: 349.0,
+  },
+  {
+    productId: "11e97b47-b940-43d6-9650-9af3b534bffa",
+    productName: "Samsung Galaxy Z Fold 6",
+    imageUrl:
+      "https://res.cloudinary.com/dcksuxdd1/image/upload/v1762737410/products/r0hncvvq0ifeeobdbvnt.png",
+    price: 1249.0,
+  },
+];
+
+export const topCategories = [
+  {
+    id: 1,
+    name: "Laptop",
+    imageUrl:
+      "https://p3-ofp.static.pub//fes/cms/2024/04/01/osqn4brfn79vgwdhq64mis2ddur9a6681695.png",
+  },
+  {
+    id: 2,
+    name: "Smartphone",
+    imageUrl: "https://betanews.com/wp-content/uploads/2025/08/Google-Pixel-10.png",
+  },
+  {
+    id: 5,
+    name: "Headphone",
+    imageUrl:
+      "https://d1ncau8tqf99kp.cloudfront.net/360/M5_360view/WF-1000XM5_black_3600000_web.png",
+  },
+  {
+    id: 6,
+    name: "Console",
+    imageUrl:
+      "https://cms-assets.xboxservices.com/assets/bc/40/bc40fdf3-85a6-4c36-af92-dca2d36fc7e5.png?n=642227_Hero-Gallery-0_A1_857x676.png",
+  },
+  {
+    id: 13,
+    name: "IOT",
+    imageUrl: "https://jacksonsystems.com/wp-content/uploads/2023/11/8742.png",
+  },
+];
