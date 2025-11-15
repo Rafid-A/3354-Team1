@@ -5,7 +5,9 @@
   "main": "src/server.js",
   "scripts": {
     "dev": "nodemon src/server.js",
-    "start": "node src/server.js"
+    "start": "node src/server.js",
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
+    "test:watch": "node --experimental-vm-modules node_modules/jest/bin/jest.js --watch"
   },
   "keywords": [],
   "author": "",
@@ -23,9 +25,12 @@
     "pg": "^8.16.3"
   },
   "devDependencies": {
+    "@jest/globals": "^30.2.0",
     "@types/node": "^24.9.2",
     "drizzle-kit": "^0.31.6",
+    "jest": "^30.2.0",
     "nodemon": "^3.1.10",
+    "supertest": "^7.1.4",
     "tsx": "^4.20.6"
   }
 }
