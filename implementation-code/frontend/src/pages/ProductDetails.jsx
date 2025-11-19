@@ -9,6 +9,7 @@ import Navbar from "@/components/navbar";
 import { Badge } from "@/components/ui/badge";
 import { useCartStore } from "@/store/cartStore";
 import { toast } from "sonner";
+import { Spinner } from "@/components/ui/spinner";
 
 const ProductDetails = () => {
   const { id } = useParams();
@@ -58,7 +59,12 @@ const ProductDetails = () => {
     fetchProduct();
   }, [id]);
 
-  if (loading) return <p>Loading...</p>;
+  if (loading)
+    return (
+      <div className="flex items-center justify-center h-screen">
+        <Spinner className="size-6 text-green-500" />
+      </div>
+    );
 
   return (
     <main className="flex flex-col gap-2 space-y-6 min-h-screen">
@@ -121,7 +127,7 @@ const ProductDetails = () => {
 
           <Separator />
 
-          <h1 className="mt-1 font-bold text-teal-600 text-3xl">${product.price}</h1>
+          <h1 className="mt-1 font-bold text-teal-600 text-3xl">${product.price?.toFixed(2)}</h1>
 
           <div className="flex md:flex-row flex-col justify-between">
             <div className="flex items-center gap-4">

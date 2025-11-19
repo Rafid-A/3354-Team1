@@ -27,31 +27,63 @@ export const heroContent = [
 export const bestSellers = [
   {
     productId: "2e7df1bc-a354-4852-8c9b-139d674affa1",
-    productName: "Phone 17 Pro Max",
+    productName: "iPhone 17 Pro Max",
+    description:
+      "The iPhone 17 Pro Max features Apple's A19 Pro chip built on a 2nm process, delivering unmatched speed and efficiency. Its 6.9-inch Super Retina XDR ProMotion display reaches 2,500 nits peak brightness, making it perfect for outdoor viewing. The titanium frame and thinner bezels enhance durability and comfort, while the upgraded 48MP triple-camera system now supports 8K cinematic video. With up to 30 hours of battery life, it's Apple's most powerful smartphone yet.",
+    brand: "Apple",
+    price: 1299,
+    stockQuantity: 25,
+    vendorId: 2,
+    storeName: "Titan Tech",
+    categoryId: 2,
+    categoryName: "smartphone",
     imageUrl:
       "https://res.cloudinary.com/dcksuxdd1/image/upload/v1762735433/products/j1rpf5ryy2chminopkci.png",
-    price: 1299.0,
   },
   {
     productId: "d02fdb85-477c-47b1-84e6-17bcb7cbf18d",
     productName: "ASUS ROG Zephyrus G16",
+    description:
+      "The ROG Zephyrus G16 packs the AMD Ryzen 9 8945HS CPU and NVIDIA RTX 4080 GPU into a slim magnesium-alloy chassis. Its 16-inch 240Hz QHD+ Nebula HDR Display with 100% DCI-P3 coverage ensures crisp visuals and color accuracy for gaming and creative work. With a vapor-chamber cooling system and 1TB PCIe 5.0 SSD, it maintains peak performance under heavy loads. RGB backlighting and premium audio complete the next-gen gaming experience.",
+    brand: "ASUS",
+    price: 2199,
+    stockQuantity: 30,
+    vendorId: 5,
+    storeName: "AeroByte Electronics",
+    categoryId: 1,
+    categoryName: "laptop",
     imageUrl:
       "https://res.cloudinary.com/dcksuxdd1/image/upload/v1762846965/products/i2d6l3jawfxzewqlfudc.png",
-    price: 2199.0,
   },
   {
     productId: "8316a50d-11c7-4078-accd-8ea729b67a8c",
     productName: "Google Pixel Watch 4",
+    description:
+      "The Google Pixel Watch 4 runs Wear OS 5 and features a stunning 1.4-inch AMOLED display protected by sapphire glass. Powered by the Snapdragon W5+ Gen 2 chip, it delivers responsive performance with up to 48 hours of battery life. With Fitbit integration, it tracks your health, sleep, and heart rate with clinical precision. It supports LTE, Google Assistant, and fast wireless charging in a minimalist, premium design.",
+    brand: "Google",
+    price: 349,
+    stockQuantity: 30,
+    vendorId: 6,
+    storeName: "PulseTech Solutions",
+    categoryId: 4,
+    categoryName: "smartwatch",
     imageUrl:
       "https://res.cloudinary.com/dcksuxdd1/image/upload/v1762848172/products/qykvy7bkbnj04icxjqsh.png",
-    price: 349.0,
   },
   {
     productId: "11e97b47-b940-43d6-9650-9af3b534bffa",
     productName: "Samsung Galaxy Z Fold 6",
+    description:
+      "The Galaxy Z Fold6 Ultra features a 7.6-inch Dynamic AMOLED 2X main display and a 6.3-inch cover screen, both running at 120Hz. Built with Gorilla Armor Glass and an ultra-light titanium hinge, it;s Samsung's most durable foldable yet. Powered by the Snapdragon 8 Gen 3 for Galaxy chip, it delivers unmatched multitasking power. The advanced triple-camera array captures 8K video with incredible dynamic range, ideal for creators and professionals alike.",
+    brand: "Samsung",
+    price: 1899,
+    stockQuantity: 20,
+    vendorId: 3,
+    storeName: "Quantum Hub",
+    categoryId: 2,
+    categoryName: "smartphone",
     imageUrl:
       "https://res.cloudinary.com/dcksuxdd1/image/upload/v1762737410/products/r0hncvvq0ifeeobdbvnt.png",
-    price: 1249.0,
   },
 ];
 

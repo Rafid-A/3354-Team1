@@ -48,3 +48,33 @@ export const productImages = table("product_images", {
   imageUrl: t.text("image_url").notNull(),
   isPrimary: t.boolean("is_primary").default(false),
 });
+
+export const orders = table("orders", {
+  orderId: t.serial("order_id").primaryKey(),
+  userId: t.integer("user_id").references(() => users.userId),
+  stripeSessionId: t.text("stripe_session_id").notNull().unique(),
+  status: t.varchar("status", { length: 20 }).notNull().default("paid"),
+  totalAmount: t.numeric("total_amount", { precision: 10, scale: 2 }).notNull(),
+  createdAt: t.timestamp("created_at").defaultNow().notNull(),
+});
+
+export const orderItems = table("order_items", {
+  orderItemId: t.serial("order_item_id").primaryKey(),
+  orderId: t.integer("order_id").references(() => orders.orderId),
+  vendorId: t.integer("vendor_id").references(() => vendors.vendorId),
+  productId: t.uuid("product_id").references(() => products.productId),
+  quantity: t.integer("quantity").notNull(),
+  shippingStatus: t.text("shippingStatus").default("Processing"),
+});
+
+export const orderShipping = table("order_shipping", {
+  shippingId: t.serial("shipping_id").primaryKey(),
+  orderId: t.integer("order_id").references(() => orders.orderId),
+  name: t.text("name"),
+  addressLine1: t.text("address_line1"),
+  addressLine2: t.text("address_line2"),
+  city: t.text("city"),
+  state: t.text("state"),
+  country: t.text("country"),
+  postalCode: t.text("postal_code"),
+});

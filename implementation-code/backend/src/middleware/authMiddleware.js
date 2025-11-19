@@ -41,7 +41,7 @@ export const isVendor = async (req, res, next) => {
       const vendorList = await db
         .select({ vendorId: vendors.vendorId })
         .from(vendors)
-        .where(eq(userId, vendors.vendorId));
+        .where(eq(userId, vendors.userId));
 
       req.vendor = vendorList[0];
 
