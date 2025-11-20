@@ -13,7 +13,7 @@ const Hero = () => {
   );
 
   const handleButtonClick = (id) => {
-    navigate(`/products/${id}`);
+    navigate(`#`);
   };
 
   return (

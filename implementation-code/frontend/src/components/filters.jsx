@@ -57,7 +57,7 @@ const Filters = ({ categories, brands }) => {
         <h3 className="mb-2 font-semibold text-lg">Price Range</h3>
         <DualRangeSlider
           min={0}
-          max={10000}
+          max={5000}
           step={100}
           value={filters.priceRange}
           onValueChange={handlePriceChange}

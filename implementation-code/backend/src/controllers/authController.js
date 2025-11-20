@@ -1,6 +1,6 @@
 import { eq } from "drizzle-orm";
 import { db } from "../db/db.js";
-import { users } from "../db/schema.js";
+import { users, vendors } from "../db/schema.js";
 import { comparePassword, hashPassword } from "../utils/hashPassword.js";
 import { generateToken } from "../utils/jwt.js";
 
@@ -88,6 +88,15 @@ export const getUserProfile = async (req, res) => {
 
     if (userList.length == 0) {
       return res.status(401).json({ message: "Unauthorized Request" });
+    }
+
+    if (userList[0].role === "vendor") {
+      const vendor = await db
+        .select({ vendorId: vendors.vendorId })
+        .from(vendors)
+        .where(eq(userId, vendors.userId));
+
+      userList[0] = { ...userList[0], vendorId: vendor[0].vendorId };
     }
 
     res.status(200).json(userList[0]);

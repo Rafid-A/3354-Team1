@@ -5,13 +5,15 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Spinner } from "@/components/ui/spinner";
 import { Separator } from "@radix-ui/react-select";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 
 const OrderDetails = () => {
   const { id } = useParams();
   const [loading, setLoading] = useState(true);
   const [user, setUser] = useState(null);
   const [order, setOrder] = useState(null);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     async function loadProfile() {
@@ -22,8 +24,6 @@ const OrderDetails = () => {
         setUser(profile);
 
         const orderDetails = await getOrderById(id);
-
-        console.log(orderDetails);
 
         setOrder(orderDetails);
       } catch (err) {
@@ -64,7 +64,7 @@ const OrderDetails = () => {
         </p>
 
         <div className="flex flex-col lg:flex-row gap-6 w-full justify-center">
-          <div className="lg:w-xl flex flex-col gap-4">
+          <div className="lg:w-2xl flex flex-col gap-4">
             {allItems.map((item) => (
               <Card key={item.productId} className="flex flex-col sm:flex-row p-4 gap-4">
                 <img
@@ -74,7 +74,12 @@ const OrderDetails = () => {
                 />
                 <div className="flex flex-col justify-between flex-1">
                   <div>
-                    <h3 className="text-lg font-semibold text-gray-700">{item.productName}</h3>
+                    <h3
+                      className="text-lg font-semibold text-gray-700 hover:underline hover:cursor-pointer"
+                      onClick={() => navigate(`/products/${item.productId}`)}
+                    >
+                      {item.productName}
+                    </h3>
                     <p className="text-sm text-gray-500 mt-1">Quantity: {item.quantity}</p>
                     <p className="text-sm text-gray-500">
                       Price: ${parseFloat(item.price).toFixed(2)}
@@ -97,6 +102,17 @@ const OrderDetails = () => {
                   <div className="mt-2 sm:mt-0 text-xl font-bold text-teal-600">
                     ${(parseFloat(item.price) * item.quantity).toFixed(2)}
                   </div>
+                </div>
+                <div>
+                  <p className="text-gray-600 text-sm">
+                    Seller:{" "}
+                    <Link
+                      to={`/store/${item.vendorId}`}
+                      className="hover:text-gray-800 transition-colors hover:cursor-pointer hover:underline"
+                    >
+                      {item.storeName}
+                    </Link>
+                  </p>
                 </div>
               </Card>
             ))}
