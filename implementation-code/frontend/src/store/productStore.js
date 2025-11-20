@@ -7,7 +7,7 @@ export const useProductStore = create((set, get) => ({
   filters: {
     categories: [],
     brands: [],
-    priceRange: [0, 10000],
+    priceRange: [0, 5000],
     inStockOnly: false,
   },
   filteredProducts: [],
@@ -33,20 +33,15 @@ export const useProductStore = create((set, get) => ({
     let filtered = [...products];
 
     if (filters.categories.length > 0) {
-      filtered = filtered.filter((p) =>
-        filters.categories.includes(p.categoryName)
-      );
+      filtered = filtered.filter((p) => filters.categories.includes(p.categoryName));
     }
 
     if (filters.brands.length > 0) {
-      filtered = filtered.filter((p) =>
-        filters.brands.includes(p.brand.toLowerCase())
-      );
+      filtered = filtered.filter((p) => filters.brands.includes(p.brand.toLowerCase()));
     }
 
     filtered = filtered.filter(
-      (p) =>
-        p.price >= filters.priceRange[0] && p.price <= filters.priceRange[1]
+      (p) => p.price >= filters.priceRange[0] && p.price <= filters.priceRange[1]
     );
 
     if (filters.inStockOnly) {

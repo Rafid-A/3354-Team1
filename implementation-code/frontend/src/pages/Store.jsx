@@ -6,23 +6,40 @@ import { getVendorProducts } from "@/api/products";
 import { Link, useParams } from "react-router-dom";
 import Navbar from "@/components/navbar";
 import { LucideMail } from "lucide-react";
+import { Spinner } from "@/components/ui/spinner";
 
 const Store = () => {
   const { id } = useParams();
   const [vendor, setVendor] = useState(null);
   const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     async function fetchData() {
-      const vendorData = await getVendorById(id);
-      const vendorProducts = await getVendorProducts(id);
-      setVendor(vendorData);
-      setProducts(vendorProducts);
+      setLoading(true);
+
+      try {
+        const vendorData = await getVendorById(id);
+        const vendorProducts = await getVendorProducts(id);
+        setVendor(vendorData);
+        setProducts(vendorProducts);
+      } catch (error) {
+      } finally {
+        setLoading(false);
+      }
     }
     fetchData();
   }, [id]);
 
-  if (!vendor) return <p>Loading...</p>;
+  if (loading)
+    return (
+      <div className="flex items-center justify-center h-screen">
+        <Spinner className="size-6 text-green-500" />
+      </div>
+    );
+
+  if (!vendor)
+    return <div className="flex items-center justify-center h-screen">Store not found</div>;
 
   return (
     <main className="flex flex-col gap-2 space-y-6 min-h-screen">

@@ -37,9 +37,9 @@ const Navbar = () => {
                     Products
                   </Link>
 
-                  <Link to="/categories" onClick={() => setOpen(false)}>
+                  {/* <Link to="/categories" onClick={() => setOpen(false)}>
                     Categories
-                  </Link>
+                  </Link> */}
                 </div>
               </SheetContent>
             </Sheet>
@@ -54,12 +54,12 @@ const Navbar = () => {
               Products
             </Link>
 
-            <Link
+            {/* <Link
               to="/categories"
               className="text-sm font-medium text-gray-600 hover:text-teal-600"
             >
               Categories
-            </Link>
+            </Link> */}
           </div>
         </div>
 

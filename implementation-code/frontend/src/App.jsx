@@ -9,6 +9,9 @@ import Cart from "./pages/Cart";
 import AddProduct from "./pages/AddProduct";
 import Store from "./pages/Store";
 import Profile from "./pages/Profile";
+import OrderDetails from "./pages/OrderDetails";
+import OrderSuccess from "./pages/OrderSuccess";
+import OrderFailure from "./pages/OrderFailure";
 
 function App() {
   return (
@@ -23,6 +26,9 @@ function App() {
         <Route path="/addProduct" element={<AddProduct />} />
         <Route path="/store/:id" element={<Store />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/orders/:id" element={<OrderDetails />} />
+        <Route path="/checkout/success" element={<OrderSuccess />} />
+        <Route path="/checkout/failure" element={<OrderFailure />} />
       </Routes>
       <Toaster richColors position="top-center" />
     </>

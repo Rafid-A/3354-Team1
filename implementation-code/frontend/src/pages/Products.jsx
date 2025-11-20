@@ -11,6 +11,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Spinner } from "@/components/ui/spinner";
 import { useProductStore } from "@/store/productStore";
 import { ArrowRightIcon, SlidersHorizontal } from "lucide-react";
 import { useEffect, useState } from "react";
@@ -115,7 +116,9 @@ const Products = () => {
             </div>
 
             {loading ? (
-              <p>Loading</p>
+              <div className="flex items-center justify-center h-full">
+                <Spinner className="size-6 text-green-500" />
+              </div>
             ) : (
               <div className="gap-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                 {sortedProducts.map((product) => (
